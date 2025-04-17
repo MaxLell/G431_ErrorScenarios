@@ -15,5 +15,6 @@ void ec_divide_by_zero(void);
 void ec_write_to_null(void);
 void ec_illegal_instruction_execution(void);
 void ec_illegal_address_execution(void);
+void ec_null_ptr_execution(void);
 
 #endif /* ONBOARDTESTSCENARIOS_OBT_TESTS_H_ */

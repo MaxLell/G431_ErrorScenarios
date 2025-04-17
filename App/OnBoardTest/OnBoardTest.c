@@ -11,7 +11,7 @@
  * private variables
  ************************************************************/
 
-static OnBoardTest_Test_e eCurrentTest = E_TEST_ERROR_ILLEGAL_ADDRESS_EXECUTION;
+static OnBoardTest_Test_e eCurrentTest = E_TEST_ERROR_NULL_PTR_FUNCTION_EXECUTION;
 
 /**
  * Init Function Array
@@ -22,6 +22,7 @@ static const test_function_ptr initFunctionLUT[E_TEST_LAST_ENTRY] = {
 	[E_TEST_ERROR_WRITE_TO_NULL] = ec_write_to_null,
 	[E_TEST_ERROR_ILLEGAL_INSTRUCTION_EXECUTION] = ec_illegal_instruction_execution,
 	[E_TEST_ERROR_ILLEGAL_ADDRESS_EXECUTION] = ec_illegal_address_execution,
+	[E_TEST_ERROR_NULL_PTR_FUNCTION_EXECUTION]= ec_null_ptr_execution,
 };
 
 /**
@@ -33,6 +34,7 @@ static const test_function_ptr runFunctionLUT[E_TEST_LAST_ENTRY] = {
 	[E_TEST_ERROR_WRITE_TO_NULL] = dummy_run,
 	[E_TEST_ERROR_ILLEGAL_INSTRUCTION_EXECUTION] = dummy_run,
 	[E_TEST_ERROR_ILLEGAL_ADDRESS_EXECUTION] = dummy_run,
+	[E_TEST_ERROR_NULL_PTR_FUNCTION_EXECUTION]= dummy_run,
 };
 
 /************************************************************
