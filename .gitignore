@@ -1,0 +1,5 @@
+# Ignoriere den Debug-Ordner
+Debug/
+
+*.list
+
