@@ -50,14 +50,37 @@ void ec_divide_by_zero(void);
  * variable to count the number of calls until the fault occurs.
  */
 void ec_work_with_unitialized_ptrs(void);
+
+/**
+ * @brief Test function to simulate an illegal instruction execution.
+ * 
+ */
 void ec_illegal_instruction_execution(void);
+
+/**
+ * @brief Test function to simulate an illegal address execution.
+ */
 void ec_illegal_address_execution(void);
+
+/**
+ * @brief Test function to simulate a null pointer function execution.
+ */
 void ec_null_ptr_execution(void);
 void ec_read_from_bad_address(void);
 void ec_imprecise_fault(void);
 void ec_stacking_exception_error(void);
 void ec_write_to_invalid_rom_address(void);
 void ec_trigger_stack_overflow(void);
+
+void obt_test_error_array_out_of_bounds(void);
+void obt_test_error_integer_overflow(void);
+void obt_test_error_uninitialized_variable(void);
+void obt_test_error_invalid_pointer_cast(void);
+void obt_test_error_double_free(void);
+void obt_test_error_modify_string_literal(void);
+void obt_test_error_dangling_pointer(void);
+void obt_test_error_invalid_shift(void);
+void obt_test_error_sequence_point_violation(void);
 
 // ####################################################################################
 // Exercises for debugging
