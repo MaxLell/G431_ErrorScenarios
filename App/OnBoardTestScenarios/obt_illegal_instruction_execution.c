@@ -7,12 +7,12 @@
 #include "Types.h"
 
 void ec_illegal_instruction_execution(void) {
-	// invalid instruction
-	u32 instruction = 0xE0000000;
+  // invalid instruction
+  u32 instruction = 0xE0000000;
 
-	// Wrap into a function pointer
-	int (*bad_instruction_fn)(void) = (int(*)())(&instruction);
+  // Wrap into a function pointer
+  int (*bad_instruction_fn)(void) = (int (*)())(&instruction);
 
-	// Run this funciton
-	bad_instruction_fn();
+  // Run this funciton
+  bad_instruction_fn();
 }

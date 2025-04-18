@@ -7,23 +7,33 @@
 
 #include "Types.h"
 
- // uninitalized global ends up initialized to 0
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuninitialized"
+
+
+// uninitalized global ends up initialized to 0
 int* global_ptr_to_null = NULL;
 int* global_ptr_unitialized;
-int _write_to_null(void) {
+
+
+int work_with_uninitialized_ptrs(void) {
   int* ptr_to_null = NULL;
   int* ptr_unitialized;
 
-  *global_ptr_to_null  = 10;    /* tries to write to address zero */
+  *global_ptr_to_null = 10;     /* tries to write to address zero */
   *global_ptr_unitialized = 10; /* tries to write to address zero */
-  *ptr_to_null  = 10;           /* tries to write to address zero */
-  *ptr_unitialized = 10;    		/* tries to write ?? somewhere ?? */
+  *ptr_to_null = 10;            /* tries to write to address zero */
+  *ptr_unitialized = 10;        /* tries to write ?? somewhere ?? */
 
-  return *global_ptr_to_null + *global_ptr_unitialized +
-          *ptr_to_null + *ptr_unitialized;
+  return *global_ptr_to_null + *global_ptr_unitialized + *ptr_to_null +
+         *ptr_unitialized;
 }
 
-void ec_write_to_null(void) {
-	int tmp = _write_to_null();
-	(void)tmp;
+static u32 execution_counter = 0;
+void ec_work_with_unitialized_ptrs(void) {
+  execution_counter++;
+  int tmp = work_with_uninitialized_ptrs();
+  (void)tmp;
 }
+
+#pragma GCC diagnostic pop

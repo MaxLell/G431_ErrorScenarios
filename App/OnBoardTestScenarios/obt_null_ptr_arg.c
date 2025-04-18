@@ -6,9 +6,8 @@
  */
 
 #include <obt_tests.h>
-#include "Types.h"
 
-void dummy_run(void) {}
+#include "Types.h"
 
 // #################################################################################
 // Null Ptr Error Case
@@ -19,6 +18,6 @@ static void _nullptr_arg_dummy_fn(u32* data) {
 }
 
 void ec_nullptr_arg(void) {
-	u32* dummy_arg = NULL;
-	_nullptr_arg_dummy_fn(dummy_arg);
+  u32* dummy_arg = NULL;
+  _nullptr_arg_dummy_fn(dummy_arg);
 }

@@ -6,10 +6,9 @@
  */
 
 void ec_illegal_address_execution(void) {
-	// Set up an illegal address to be executed from
-	int (*illegal_address)(void) = (int(*)())0xE0000000;
+  // Set up an illegal address to be executed from
+  int (*func_ptr)(void) = (int (*)())0x00000001;
 
-	// run the instruction at the illegal address
-	illegal_address();
-
+  // run the instruction at the illegal address
+  func_ptr();
 }

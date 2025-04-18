@@ -7,6 +7,6 @@
 
 void (*function_ptr)(void);
 
-void ec_null_ptr_execution(void) {
-	function_ptr();
+void ec_null_ptr_execution(void) { 
+	function_ptr(); 
 }
