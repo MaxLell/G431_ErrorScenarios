@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "app.h"
+#include "OnBoardTest.h"
 
 /* USER CODE END Includes */
 
@@ -88,7 +88,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  app_main();
+  OnBoardTest_init();
 
   /* USER CODE END 2 */
 
@@ -99,9 +99,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  /**
-	   * Careful - this code here is never reached
-	   */
+	  OnBoardTest_loop();
   }
   /* USER CODE END 3 */
 }
